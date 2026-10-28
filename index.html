@@ -1,614 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<meta name="description" content="Growvian — grow your skills, build connections, and explore digital opportunities.">
-<title>Growvian | Grow Together. Achieve More.</title>
-<style>
-:root{--bg:#090909;--panel:#121212;--gold:#c6a45b;--gold2:#ead7a1;--text:#f7f4ec;--muted:#b7b1a3;--line:rgba(198,164,91,.24)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:rgba(9,9,9,.96);border-bottom:1px solid var(--line)}
-nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{font-weight:800;letter-spacing:1.4px;font-size:1.2rem;color:var(--gold2)}
-.navlinks{display:flex;gap:18px;color:var(--muted);font-size:.9rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:7px;font-weight:700;border:1px solid var(--gold);cursor:pointer;background:transparent;color:var(--text)}
-.btn.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111;border:0}
-button:disabled{opacity:.5}
-.hero{padding:75px 0}
-.eyebrow{color:var(--gold2);text-transform:uppercase;letter-spacing:2px;font-size:.76rem;font-weight:700}
-h1{font-size:clamp(2.7rem,7vw,5rem);line-height:1.06;margin:20px 0}
-h1 em{font-style:normal;color:var(--gold2)}
-h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2}
-.lead,.muted{color:var(--muted)}
-.lead{max-width:650px;font-size:1.08rem}
-.section{padding:65px 0}
-.alt{background:#0e0e0e;border-block:1px solid #1b1a17}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{padding:23px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,#151515,#0d0d0d)}
-.card h3{margin:10px 0}
-.card p{color:var(--muted);font-size:.94rem}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-  .cinematic-quotes{
-text-align:center;
-margin:0 auto 30px;
-padding:20px 0;
-overflow:hidden;
-}
-
-.quote-label{
-color:var(--gold);
-font-size:.72rem;
-letter-spacing:5px;
-font-weight:bold;
-margin-bottom:22px;
-}
-
-.quote-window{
-height:145px;
-overflow:hidden;
-position:relative;
-}
-
-.quote-track{
-animation:quoteScroll 12s cubic-bezier(.65,0,.35,1) forwards;
-}
-  
-.cinematic-quote{
-height:145px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-color:var(--gold2);
-font-size:clamp(1.35rem,4vw,2.3rem);
-font-weight:800;
-line-height:1.3;
-letter-spacing:1px;
-text-shadow:0 0 24px rgba(198,164,91,.22);
-}
-
-.cinematic-quote span{
-display:block;
-margin-top:8px;
-color:#f7f4ec;
-font-size:clamp(.85rem,2.5vw,1.1rem);
-font-weight:400;
-letter-spacing:2px;
-}
-
-@keyframes quoteScroll{
-  0%,15% {
-    transform:translateY(0);
-  }
-  22%,37% {
-    transform:translateY(-145px);
-  }
-  44%,59% {
-    transform:translateY(-290px);
-  }
-  66%,100% {
-    transform:translateY(-435px);
-  }
-}
-  
-@media(prefers-reduced-motion:reduce){
-.quote-track{animation:none}
-}
- 
-
-@keyframes membershipReveal{
-  from{
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(35px);
-  }
-  to{
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
-  }
-}
-  
-  .membership-content{
-opacity:0;
-visibility:hidden;
-transform:translateY(30px);
-animation:membershipReveal 1.2s ease 12s forwards;
-  }
-  .member-access{
-  margin-bottom:55px;
-  padding:32px 24px;
-  text-align:center;
-  background:linear-gradient(145deg,#17140e,#0c0c0c 65%);
-  border:1px solid rgba(198,164,91,.55);
-  border-radius:18px;
-  box-shadow:0 12px 40px rgba(0,0,0,.35);
-}
-.access-label{
-  color:var(--gold2);
-  font-size:.75rem;
-  font-weight:700;
-  letter-spacing:3px;
-}
-.member-access h2{
-  margin:12px 0;
-  color:var(--text);
-}
-.member-access p{
-  color:var(--muted);
-  margin:0 0 22px;
-}
-.access-buttons{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:14px;
-}
-.access-note{
-  margin-top:22px;
-  color:#a69b83;
-  font-size:.75rem;
-  letter-spacing:.5px;
-}
-.auth-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.panel{padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-input,select,textarea{width:100%;padding:13px;margin:6px 0 12px;background:#090909;border:1px solid #393326;border-radius:7px;color:var(--text);font:inherit}
-label{font-size:.9rem;color:var(--muted)}
-.status{font-size:.9rem;color:var(--gold2);overflow-wrap:anywhere;margin-top:12px}
-.small{font-size:.8rem;color:#999285}
-.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
-.package{padding:15px;border:1px solid var(--line);border-radius:9px}
-.package input{width:auto;margin-right:7px}
-.package strong{color:var(--gold2)}
-.hidden{display:none!important}
-footer{padding:25px 0;border-top:1px solid var(--line);color:#999285;font-size:.85rem}
-@media(max-width:760px){
-.navlinks{display:none}
-.grid,.auth-layout{grid-template-columns:1fr}
-.hero{padding:55px 0}
-.package-grid{grid-template-columns:1fr 1fr}
-}
-</style>
-</head>
-<body>
-<header>
-<div class="wrap">
-<nav>
-<a class="brand" href="#home">
-  <img src="growvian-logo.png.jpg" alt="Growvian Logo" style="height:110px;width:auto;max-width:320px;object-fit:contain;display:block;">
-</a>
-<div class="navlinks">
-<a href="#about">About</a>
-<a href="#opportunities">Opportunities</a>
-<a href="#account">Account</a>
-</div>
-<a class="btn" href="#account">Register / Login</a>
-</nav>
-</div>
-</header>
-
-<main>
-<section class="hero" id="home">
- <div class="member-access">
-   <div class="cinematic-quotes" id="cinematicQuotes">
-  <div class="quote-label">THE GROVVIAN VISION</div>  <div class="quote-window">
-    <div class="quote-track">
-      <div class="cinematic-quote">
-        DREAM BIGGER.
-        <span>Think Beyond Limits.</span>
-      </div>  <div class="cinematic-quote">
-    BUILD YOUR SKILLS.
-    <span>Create Your Opportunities.</span>
-  </div>
-
-  <div class="cinematic-quote">
-    YOUR VISION TODAY.
-    <span>Your Growth Tomorrow.</span>
-  </div>
-
-  <div class="cinematic-quote">
-    TOGETHER WE GROW.
-    <span>Together We Achieve.</span>
-  </div>
-</div>
-
-  </div>
-   </div>
-   <div class="membership-content" id="membershipContent">
-
-<div class="access-label">GROVVIAN MEMBERSHIP</div>
-  <h2>Welcome to Growvian</h2>
-  <p>Access your account or join our growing community.</p>
-  <div class="access-buttons">
-    <a class="btn primary" href="#loginBox">LOGIN TO YOUR ACCOUNT ↗</a>
-    <a class="btn" href="#registerBox">CREATE YOUR ACCOUNT +</a>
-  </div>
-  <div class="access-note">Secure Account Access • Grow Together. Achieve More.</div>
-   </div>
- </div> 
-<div class="wrap">
-<div class="eyebrow">Digital opportunities • Real connections</div>
-<h1>Grow Together.<br><em>Achieve More.</em></h1>
-<p class="lead">Welcome to Growvian — a community focused on learning, meaningful connections and exploring digital business opportunities with clarity and confidence.</p>
-<div class="actions">
-  <a class="btn primary" href="#loginBox">Login to Your Account ↗</a>
-  <a class="btn" href="#registerBox">Create New Account +</a>
-</div>
-<p class="small">Understand the terms and make informed decisions before participating.</p>
-</div>
-</section>
-
-<section class="section alt" id="about">
-<div class="wrap">
-<div class="eyebrow">Who we are</div>
-<h2>A smarter way to explore digital growth.</h2>
-<p class="muted">Growvian focuses on transparent information, practical guidance and a community-first approach.</p>
-<div class="grid">
-<article class="card"><h3>Clear Information</h3><p>Understand processes, costs, terms and eligibility before deciding.</p></article>
-<article class="card"><h3>Growth Mindset</h3><p>Learn consistently and build practical digital business skills.</p></article>
-<article class="card"><h3>Community First</h3><p>Connect with people and ask questions before making decisions.</p></article>
-</div>
-</div>
-</section>
-
-<section class="section" id="opportunities">
-<div class="wrap">
-<div class="eyebrow">Our focus</div>
-<h2>Digital opportunities, explained clearly.</h2>
-<div class="grid">
-<article class="card"><h3>Affiliate Marketing</h3><p>Learn about referrals and applicable commission terms.</p></article>
-<article class="card"><h3>Digital Learning</h3><p>Explore resources to develop useful business skills.</p></article>
-<article class="card"><h3>Member Resources</h3><p>A planned space for member updates and support.</p></article>
-</div>
-<p class="small">Income is not guaranteed. Review all applicable terms before participating.</p>
-</div>
-</section>
-
-<section class="section alt" id="account">
-<div class="wrap">
-<div class="eyebrow">Growvian membership</div>
-<h2>Create your account</h2>
-<p class="muted">Register or log in to access package selection.</p>
-
-<div class="auth-layout">
-<div class="panel" id="registerBox">
-<h3>New Registration</h3>
-<form id="registerForm">
-<label for="fullName">Full name</label>
-<input id="fullName" autocomplete="name" required maxlength="100" placeholder="Enter your full name">
-
-<label for="regEmail">Email address</label>
-<input id="regEmail" type="email" autocomplete="email" required placeholder="Enter your email">
-
-<label for="regPassword">Password</label>
-<input id="regPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters">
-
-<label for="referral">Referral code (optional)</label>
-<input id="referral" maxlength="30" placeholder="Enter referral code if you have one">
-
-<button class="btn primary" id="registerBtn" type="submit">Create Account</button>
-</form>
-<div id="registerStatus" class="status" aria-live="polite"></div>
-</div>
-
-<div class="panel" id="loginBox">
-<h3>Welcome Back</h3>
-<form id="loginForm">
-<label for="loginEmail">Email address</label>
-<input id="loginEmail" type="email" autocomplete="email" required placeholder="Enter your email">
-
-<label for="loginPassword">Password</label>
-<input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Enter your password">
-
-<button class="btn primary" id="loginBtn" type="submit">Login</button>
-</form>
-<button class="btn" id="resetBtn" type="button">Forgot Password?</button>
-<div id="loginStatus" class="status" aria-live="polite"></div>
-</div>
-</div>
-
-<div class="panel hidden" id="memberPanel" style="margin-top:22px">
-<h3>Member Dashboard</h3>
-<p id="welcome" class="muted"></p>
-<p>Account status: <strong id="accountStatus">Pending</strong></p>
-<p>Your referral code: <strong id="myReferral">Loading...</strong></p>
-<p class="small">Choose your package below. Your ID will remain pending until the payment and account are verified by the administrator.</p>
-
-<form id="packageForm">
-<label for="packageAmount">Select a package</label>
-<select id="packageAmount" required>
-<option value="">Choose a package</option>
-<option value="2999">₹2,999</option>
-<option value="4999">₹4,999</option>
-<option value="7999">₹7,999</option>
-<option value="13999">₹13,999</option>
-<option value="14999">₹14,999</option>
-</select>
-<button class="btn primary" id="packageBtn" type="submit">Save Package Selection</button>
-</form>
-<div id="packageStatus" class="status" aria-live="polite"></div>
-<p class="small">Manual payment, QR payment proof, admin verification and ID activation are not implemented yet.</p>
-<button class="btn" id="logoutBtn" type="button">Logout</button>
-</div>
-</div>
-</section>
-  <section class="section" id="leadership">
-  <div class="wrap">
-    <div class="eyebrow">Our Leadership</div>
-    <h2>Meet the Visionaries Behind Growvian</h2>
-    <p class="muted">Leadership built on vision, growth and a commitment to helping others move forward.</p>
-
-    <div class="grid">
-
-      <article class="card" style="text-align:center">
-        <img src="natish-ceo.jpg.png" alt="Natish Kumar, CEO of Growvian"
-        style="width:170px;height:170px;object-fit:cover;border-radius:50%;border:3px solid var(--gold);">    
-        <h3>Natish Kumar</h3>
-        <p style="color:var(--gold2);font-weight:bold">CEO & Founder</p>
-        <p>To build Growvian into a trusted digital platform that creates meaningful opportunities, develops practical skills, and helps people grow through innovation, teamwork and sustainable business practices.</p>
-      </article>
-
-      <article class="card" style="text-align:center">
-        <img src="sharda-devi.jpg.jpg" alt="Sharda Devi, Co-Founder of Growvian"
-             style="width:170px;height:170px;object-fit:cover;border-radius:50%;border:3px solid var(--gold);">
-        <h3>Sharda Devi</h3>
-        <p style="color:var(--gold2);font-weight:bold">Co-Founder</p>
-        <p>To support Growvian's growth by building strong relationships, encouraging teamwork, and helping create an inclusive community where people can learn, develop their abilities and work toward their goals.</p>
-      </article>
-
-    </div>
-  </div>
-  </section>
-</main>
-
-<footer>
-<div class="wrap">
-© <span id="year"></span> Growvian. All rights reserved.
-<p class="small">Grow Together. Achieve More.</p>
-</div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-/* Replace these two values with your own Supabase project details. */
-const SUPABASE_URL = 'https://wecybxfjrktgjdybttvj.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_E3MOqNjt5c4chCP6QQwVXw_f8LXhJpC';
-
-const registerForm = document.getElementById('registerForm');
-const loginForm = document.getElementById('loginForm');
-const packageForm = document.getElementById('packageForm');
-
-let db = null;
-let currentUser = null;
-
-function showStatus(id, message) {
-  document.getElementById(id).textContent = message;
-}
-
-function friendlyError(error) {
-  return error && error.message ? error.message : 'Something went wrong. Please try again.';
-}
-
-function setBusy(buttonId, busy, busyText, normalText) {
-  const button = document.getElementById(buttonId);
-  button.disabled = busy;
-  button.textContent = busy ? busyText : normalText;
-}
-
-function initSupabase() {
-  if (!window.supabase) {
-    showStatus('registerStatus', 'Unable to load the connection library. Please refresh the page.');
-    return false;
-  }
-
-  if (SUPABASE_PUBLISHABLE_KEY === 'PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE') {
-    showStatus('registerStatus', 'Setup needed: add your Supabase publishable key in the code.');
-    return false;
-  }
-
-  if (!db) {
-    db = window.supabase.createClient(
-      SUPABASE_URL,
-      SUPABASE_PUBLISHABLE_KEY
-    );
-  }
-  return true;
-}
-
-function safeText(value) {
-  return typeof value === 'string' ? value : '';
-}
-
-async function loadMember() {
-  if (!db || !currentUser) return;
-
-  const { data, error } = await db
-    .from('profiles')
-    .select('full_name, referral_code, package_amount, payment_status, is_active')
-    .eq('id', currentUser.id)
-    .maybeSingle();
-
-  if (error || !data) {
-    showStatus('packageStatus', 'Profile is not available yet. Please refresh or sign in again.');
-    return;
-  }
-
-  document.getElementById('memberPanel').classList.remove('hidden');
-  document.getElementById('welcome').textContent =
-    'Welcome, ' + (safeText(data.full_name) || currentUser.email || 'Member');
-
-  document.getElementById('myReferral').textContent =
-    safeText(data.referral_code) || 'Not available';
-
-  document.getElementById('accountStatus').textContent =
-    data.is_active ? 'Active' : 'Pending admin approval';
-
-  if (data.package_amount) {
-    document.getElementById('packageAmount').value = String(data.package_amount);
-  }
-}
-
-async function refreshSession() {
-  if (!initSupabase()) return;
-
-  const { data, error } = await db.auth.getSession();
-  if (error) {
-    showStatus('loginStatus', friendlyError(error));
-    return;
-  }
-
-  currentUser = data.session ? data.session.user : null;
-
-  if (currentUser) {
-    document.getElementById('memberPanel').classList.remove('hidden');
-    await loadMember();
-  } else {
-    document.getElementById('memberPanel').classList.add('hidden');
-  }
-}
-
-registerForm.addEventListener('submit', async function(event) {
-  event.preventDefault();
-  if (!initSupabase()) return;
-
-  const fullName = document.getElementById('fullName').value.trim();
-  const email = document.getElementById('regEmail').value.trim();
-  const password = document.getElementById('regPassword').value;
-  const referral = document.getElementById('referral').value.trim();
-
-  showStatus('registerStatus', '');
-  setBusy('registerBtn', true, 'Creating account...', 'Create Account');
-
-  try {
-    const { data, error } = await db.auth.signUp({
-      email,
-      password,
-      options: {
-        data: {
-          full_name: fullName,
-          referred_by: referral || ''
-        }
-      }
-    });
-
-    if (error) throw error;
-
-    if (data.session) {
-      currentUser = data.user;
-      showStatus('registerStatus', 'Account created. Your membership is pending verification.');
-      await loadMember();
-    } else {
-      showStatus('registerStatus', 'Registration submitted. Check your email to confirm your account, then log in.');
-    }
-  } catch (error) {
-    showStatus('registerStatus', friendlyError(error));
-  } finally {
-    setBusy('registerBtn', false, 'Creating account...', 'Create Account');
-  }
-});
-
-loginForm.addEventListener('submit', async function(event) {
-  event.preventDefault();
-  if (!initSupabase()) return;
-
-  setBusy('loginBtn', true, 'Logging in...', 'Login');
-  showStatus('loginStatus', '');
-
-  try {
-    const email = document.getElementById('loginEmail').value.trim();
-    const password = document.getElementById('loginPassword').value;
-
-    const { data, error } = await db.auth.signInWithPassword({ email, password });
-    if (error) throw error;
-
-    currentUser = data.user;
-    showStatus('loginStatus', 'Login successful.');
-    await loadMember();
-  } catch (error) {
-    showStatus('loginStatus', friendlyError(error));
-  } finally {
-    setBusy('loginBtn', false, 'Logging in...', 'Login');
-  }
-});
-
-document.getElementById('resetBtn').addEventListener('click', async function() {
-  if (!initSupabase()) return;
-
-  const email = document.getElementById('loginEmail').value.trim();
-  if (!email) {
-    showStatus('loginStatus', 'Enter your email address first.');
-    return;
-  }
-
-  const { error } = await db.auth.resetPasswordForEmail(email, {
-    redirectTo: window.location.origin
-  });
-
-  showStatus(
-    'loginStatus',
-    error ? friendlyError(error) : 'If the email is registered, password reset instructions will be sent.'
-  );
-});
-
-packageForm.addEventListener('submit', async function(event) {
-  event.preventDefault();
-  if (!initSupabase()) return;
-
-  if (!currentUser) {
-    showStatus('packageStatus', 'Please log in first.');
-    return;
-  }
-
-  const amount = Number(document.getElementById('packageAmount').value);
-  const allowed = [2999, 4999, 7999, 13999, 14999];
-
-  if (!allowed.includes(amount)) {
-    showStatus('packageStatus', 'Please select a valid package.');
-    return;
-  }
-
-  setBusy('packageBtn', true, 'Saving...', 'Save Package Selection');
-
-  try {
-    const { error } = await db
-      .from('profiles')
-      .update({ package_amount: amount })
-      .eq('id', currentUser.id);
-
-    if (error) throw error;
-
-    showStatus('packageStatus', 'Package selection saved. Payment and ID activation are still pending.');
-  } catch (error) {
-    showStatus('packageStatus', friendlyError(error));
-  } finally {
-    setBusy('packageBtn', false, 'Saving...', 'Save Package Selection');
-  }
-});
-
-document.getElementById('logoutBtn').addEventListener('click', async function() {
-  if (!initSupabase()) return;
-
-  const { error } = await db.auth.signOut();
-
-  if (error) {
-    showStatus('packageStatus', friendlyError(error));
-    return;
-  }
-
-  currentUser = null;
-  document.getElementById('memberPanel').classList.add('hidden');
-  showStatus('loginStatus', 'You have logged out.');
-});
-  refreshSession();
-</script>
-</body>
-</html>
-
+Growvian Logo   
+   About   Opportunities   Packages   Account   
+   Register / Login      
+            
+   
+   
+Digital opportunities • Real connections
+   
+# Grow Together.
+*Achieve More.*
+   
+Welcome to Growvian — a community focused on learning, meaningful connections and exploring digital business opportunities with clarity and confidence.
+   
+   Login to Your Account ↗   Create New Account +   
+   
+Understand the terms and make informed decisions before participating.
+   
+      
+THE GROVVIAN VISION
+   
+DREAM BIGGER.
+BUILD YOUR SKILLS.
+CREATE YOUR
+OPPORTUNITIES.
+   
+   
+YOUR VISION TODAY. YOUR GROWTH TOMORROW.
+      
+         
+   
+Who we are
+   
+## A smarter way to explore digital growth.
+   
+Growvian focuses on transparent information, practical guidance and a community-first approach.
+   
+   
+### Clear Information
+Understand processes, costs, terms and eligibility before deciding.
+   
+### Growth Mindset
+Learn consistently and build practical digital business skills.
+   
+### Community First
+Connect with people and ask questions before making decisions.
+   
+   
+         
+   
+Our focus
+   
+## Digital opportunities, explained clearly.
+   
+   
+### Affiliate Marketing
+Learn about referrals and applicable commission terms.
+   
+### Digital Learning
+Explore resources to develop useful business skills.
+   
+### Member Resources
+A planned space for member updates and support.
+   
+   
+Income is not guaranteed. Review all applicable terms before participating.
+   
+         
+   
+Explore membership options
+   
+   
+   
+## Choose Your Package
+   
+Swipe left to explore all six packages. Each package displays its included skill topics.
+   
+   
+   ‹   ›   
+   
+   
+      
+Growvian Starter Package
+   
+PACKAGE 01 / 06
+GROVVIAN STARTER PACKAGE
+₹1,149
+   
+- Digital Marketing Basics
+- Affiliate Marketing Basics
+
+   SELECT PACKAGE
+         
+Prarambh Package
+   
+PACKAGE 02 / 06
+PRARAMBH PACKAGE
+₹2,999
+   
+- Digital Marketing
+- Affiliate Marketing
+- Canva Full Course
+- ChatGPT Fundamentals
+
+   SELECT PACKAGE
+         
+Aarambh Package
+   
+PACKAGE 03 / 06
+AARAMBH PACKAGE
+₹4,999
+   
+- Digital Marketing
+- Affiliate Marketing
+- Canva Full Course
+- ChatGPT Full Course
+- Instagram Management
+- Content Creation
+
+   SELECT PACKAGE
+         
+Growvian Pro Package
+   
+PACKAGE 04 / 06
+GROVVIAN PRO PACKAGE
+₹7,999
+   
+- Digital Marketing
+- Affiliate Marketing
+- Canva Full Course
+- ChatGPT Full Course
+- Instagram Management
+- Ad Management
+- Gemini Full Course
+- Professional Video Editing with VN
+
+   SELECT PACKAGE
+         
+Growvian Prime Package
+   
+PACKAGE 05 / 06
+GROVVIAN PRIME PACKAGE
+₹13,999
+   
+- Digital Marketing
+- Affiliate Marketing
+- Canva Full Course
+- ChatGPT Full Course
+- Gemini Full Course
+- Instagram Management
+- Ad Management
+- Professional Video Editing with VN
+- Social Media Management
+- Personal Branding
+- Lead Generation
+- Content Strategy
+
+   SELECT PACKAGE
+         
+Growvian Diamond Package
+   
+PACKAGE 06 / 06
+GROVVIAN DIAMOND PACKAGE
+₹14,999
+   
+- Digital Marketing
+- Advanced Affiliate Marketing
+- Canva Full Course
+- ChatGPT Full Course
+- Gemini Full Course
+- Instagram Management
+- Ad Management
+- Professional Video Editing with VN
+- Social Media Management
+- Personal Branding
+- Lead Generation
+- Content Strategy
+- AI Tools &amp; Automation
+- Brand Growth Strategies
+- Online Business Development
+
+   SELECT PACKAGE
+      
+   
+Package 1 of 6
+SWIPE ←
+   
+Package skills shown here should match the training and resources actually provided. Income or business results are not guaranteed.
+   
+         
+   
+Growvian membership
+   
+## Create your account
+   
+Register or log in to access your member dashboard and save a package selection.
+   
+   
+   
+### New Registration
+      Full name   Email address   Password   Referral code (optional)   Create Account   
+   
+   
+   
+### Welcome Back
+      Email address   Password   Login      Forgot Password?   
+   
+   
+   
+   
+### Member Dashboard
+   
+Account status: **Pending**
+   
+Your referral code: **Loading...**
+   
+Choose a package below. Your ID remains pending until payment and account verification by an administrator.
+      Select a package      Choose a package   ₹1,149 — GROVVIAN STARTER PACKAGE   ₹2,999 — PRARAMBH PACKAGE   ₹4,999 — AARAMBH PACKAGE   ₹7,999 — GROVVIAN PRO PACKAGE   ₹13,999 — GROVVIAN PRIME PACKAGE   ₹14,999 — GROVVIAN DIAMOND PACKAGE      Save Package Selection      
+   
+Manual payment, QR payment proof, admin verification and ID activation are not implemented yet.
+   Logout   
+   
+         
+   
+Our Leadership
+## Meet the Visionaries Behind Growvian
+   
+Leadership built on vision, growth and a commitment to helping others move forward.
+   
+      Natish Kumar, CEO of Growvian   
+### Natish Kumar
+CEO &amp; Founder
+   
+To build Growvian into a trusted digital platform that creates meaningful opportunities, develops practical skills, and helps people grow through innovation, teamwork and sustainable business practices.
+         Sharda Devi, Co-Founder of Growvian   
+### Sharda Devi
+Co-Founder
+   
+To support Growvian's growth by building strong relationships, encouraging teamwork, and helping create an inclusive community where people can learn, develop their abilities and work toward their goals.
+      
+   
+         
+©  Growvian. All rights reserved.
+Grow Together. Achieve More.
+         
