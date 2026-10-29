@@ -21,34 +21,41 @@ header{position:sticky;top:0;z-index:50;background:rgba(8,8,8,.96);backdrop-filt
 #intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(ellipse at center,#211a0b 0,#080808 58%);animation:introAway 1s ease 4.4s forwards;pointer-events:none}.intro-orbit{position:absolute;width:min(75vw,360px);aspect-ratio:1;border:1px solid #c6a45b70;border-radius:50%;box-shadow:0 0 60px #c6a45b20;animation:orbit 3s ease-in-out infinite}.intro-orbit:before,.intro-orbit:after{content:"";position:absolute;inset:16px;border:1px solid #f0dda533;border-radius:50%}.intro-orbit:after{inset:-15px;border-style:dashed;animation:spin 12s linear infinite}.intro-logo{width:min(52vw,230px);max-height:230px;object-fit:contain;opacity:0;transform:scale(.45);filter:drop-shadow(0 0 0 #c6a45b);animation:logoReveal 2s cubic-bezier(.2,.8,.2,1) .35s forwards}.intro-title{position:absolute;top:calc(50% + min(31vw,140px));text-align:center;color:var(--gold2);letter-spacing:5px;font-size:clamp(.85rem,3vw,1.15rem);font-weight:800;opacity:0;animation:titleReveal 1s ease 1.5s forwards}.intro-sub{display:block;color:#c7c0b1;font-size:.65rem;letter-spacing:3px;margin-top:8px}@keyframes logoReveal{to{opacity:1;transform:scale(1);filter:drop-shadow(0 0 24px #c6a45b80)}}@keyframes titleReveal{to{opacity:1;letter-spacing:7px}}@keyframes orbit{50%{transform:scale(1.05);opacity:.7}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes introAway{to{opacity:0;visibility:hidden}}@media(prefers-reduced-motion:reduce){#intro{animation:introAway .2s ease 1.5s forwards}.intro-logo,.intro-title,.intro-orbit{animation:none;opacity:1;transform:none}}
 @media(max-width:850px){.hero-layout{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.package-card{flex-basis:calc((100% - 18px)/2)}.navlinks{display:none}}
 @media(max-width:600px){nav{min-height:68px}.brand img{height:54px;max-width:145px}.header-cta{padding:9px 10px;font-size:.78rem}.hero{padding:24px 0 50px;min-height:auto}.hero-brand-stage{min-height:260px;margin-bottom:38px}.hero-main-logo{width:min(70vw,290px)}.section{padding:52px 0}.grid,.auth-layout{grid-template-columns:1fr}.package-head{align-items:flex-start}.slider-arrow{width:38px;height:38px}.package-card{flex-basis:86%;max-width:360px}.package-info{padding:16px}.package-price{font-size:1.6rem}.intro-title{top:calc(50% + 31vw)}}
+
+#paymentHistory .payment-row,#adminPaymentsList .payment-row{padding:14px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.payment-row .payment-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.payment-row .proof-link{color:var(--gold2);text-decoration:underline}
+.payment-row .reject-note{width:100%;margin-top:8px}
+#paymentProofFile{padding:10px}
+button:disabled{opacity:.55;cursor:not-allowed}
 </style>
 </head>
 <body>
-<div id="intro" aria-label="Growvian logo reveal"><div class="intro-orbit"></div><img class="intro-logo" src="growvian-logo.png.png" alt="Growvian"><div class="intro-title">GROWVIAN<span class="intro-sub">GROW TOGETHER · ACHIEVE MORE</span></div></div>
+<div id="intro" aria-label="Growvian logo reveal"><div class="intro-orbit"></div><img class="intro-logo" src="growvian-logo.png.jpg" alt="Growvian"><div class="intro-title">GROVVIAN<span class="intro-sub">GROW TOGETHER · ACHIEVE MORE</span></div></div>
 <header><div class="wrap"><nav>
-<a class="brand" href="#home" aria-label="Growvian home"><img src="growvian-logo.png.png" alt="Growvian Logo"></a>
+<a class="brand" href="#home" aria-label="Growvian home"><img src="growvian-logo.png.jpg" alt="Growvian Logo"></a>
 <div class="navlinks"><a href="#about">About</a><a href="#packages">Plans</a><a href="#ceo">CEO</a><a href="#cofounder">Co-Founder</a></div>
 <a class="btn header-cta" href="#account">Register / Login</a>
 <div class="menu-wrap"><button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button><div class="menu" id="menu"><a href="#home">Home</a><a href="#packages">Plans</a><a href="#ceo">CEO</a><a href="#cofounder">CO-FOUNDER</a><a href="#contact">CONTACT</a><a href="#about">About</a></div></div>
 </nav></div></header>
 <main>
-<section class="hero" id="home"><div class="wrap"><div class="hero-brand-stage" aria-label="Growvian brand logo"><img class="hero-main-logo" src="growvian-logo.png.png" alt="Growvian — Grow Together, Achieve More"></div><div class="hero-layout"><div><div class="eyebrow">Digital opportunities • Real connections</div><h1>Grow Together.<br><em>Achieve More.</em></h1><p class="lead">Welcome to Growvian — an affiliate marketing platform helping people explore digital learning and performance-based commission opportunities with clear terms.</p><div class="actions"><a class="btn primary" href="#account">Create Your Account ↗</a><a class="btn" href="#packages">Explore Plans</a></div><p class="small">Review the offer details, eligibility and terms before participating. Earnings are not guaranteed.</p></div><aside class="vision-card"><div class="vision-kicker">THE GROWVIAN VISION</div><div class="vision-line">DREAM BIGGER.<br><span class="serif">BUILD YOUR SKILLS.</span><br>CREATE YOUR<br><span class="serif">OPPORTUNITIES.</span></div><div class="vision-rule"></div><div class="vision-sub">YOUR VISION TODAY. YOUR GROWTH TOMORROW.</div></aside></div></div></section>
+<section class="hero" id="home"><div class="wrap"><div class="hero-brand-stage" aria-label="Growvian brand logo"><img class="hero-main-logo" src="growvian-logo.png.jpg" alt="Growvian — Grow Together, Achieve More"></div><div class="hero-layout"><div><div class="eyebrow">Digital opportunities • Real connections</div><h1>Grow Together.<br><em>Achieve More.</em></h1><p class="lead">Welcome to Growvian — an affiliate marketing platform helping people explore digital learning and performance-based commission opportunities with clear terms.</p><div class="actions"><a class="btn primary" href="#account">Create Your Account ↗</a><a class="btn" href="#packages">Explore Plans</a></div><p class="small">Review the offer details, eligibility and terms before participating. Earnings are not guaranteed.</p></div><aside class="vision-card"><div class="vision-kicker">THE GROVVIAN VISION</div><div class="vision-line">DREAM BIGGER.<br><span class="serif">BUILD YOUR SKILLS.</span><br>CREATE YOUR<br><span class="serif">OPPORTUNITIES.</span></div><div class="vision-rule"></div><div class="vision-sub">YOUR VISION TODAY. YOUR GROWTH TOMORROW.</div></aside></div></div></section>
 <section class="section alt" id="about"><div class="wrap"><div class="eyebrow">Who we are</div><h2>A smarter way to explore digital growth.</h2><p class="lead">Growvian focuses on transparent information, practical guidance and a community-first approach.</p><div class="grid"><article class="card"><h3>Clear Information</h3><p>Understand processes, costs, terms and eligibility before deciding.</p></article><article class="card"><h3>Growth Mindset</h3><p>Learn consistently and build practical digital business skills.</p></article><article class="card"><h3>Community First</h3><p>Connect with people and ask questions before making decisions.</p></article></div></div></section>
 <section class="section" id="features"><div class="wrap"><div class="eyebrow">Why Growvian</div><h2>Opportunities with clarity.</h2><div class="grid"><article class="card"><div class="feature-icon">↗</div><h3>Affiliate Marketing</h3><p>Learn about referrals, qualifying sales and applicable commission terms.</p></article><article class="card"><div class="feature-icon">▣</div><h3>Digital Learning</h3><p>Explore resources designed to develop practical digital business skills.</p></article><article class="card"><div class="feature-icon">◎</div><h3>Member Resources</h3><p>Access member updates and support as these features become available.</p></article></div></div></section>
 <section class="section alt" id="commission"><div class="wrap"><div class="grid"><article class="card"><div class="feature-icon">▱</div><h3>Up to 70% commission</h3><p>The advertised maximum commission may apply to eligible offers. Actual commission depends on the specific offer, qualifying sales, and program terms.</p><p class="commission">EARN UP TO 70%</p><p class="small">Commission is not guaranteed; review the applicable terms before joining.</p></article><div class="feature-photo"><div><span class="verified">✧ VERIFIED MENTORING</span><h2>Learn from real mentors</h2><p class="lead">Explore practical guidance and skill-building resources. Mentor credentials and course availability should be verified before purchase.</p></div></div><article class="card"><div class="feature-icon">✓</div><h3>Clear program terms</h3><p>Understand the package, what is included, payment conditions and refund terms before making a decision.</p></article></div></div></section>
 <section class="section" id="packages"><div class="wrap"><div class="eyebrow">Explore membership options</div><div class="package-head"><div><h2>Choose Your Package</h2><p>Swipe to explore all six packages and their listed skill topics.</p></div><div class="slider-controls"><button class="slider-arrow" id="packagePrev" type="button" aria-label="Previous package">‹</button><button class="slider-arrow" id="packageNext" type="button" aria-label="Next package">›</button></div></div>
 <div class="package-slider" id="packageSlider" tabindex="0" aria-label="Swipeable Growvian packages">
-<article class="package-card"><div class="package-photo-wrap"><img class="package-photo" src="starter.jpg.png" alt="Growvian Starter Package" loading="lazy"></div><div class="package-info"><div class="package-number">PACKAGE 01 / 06</div><div class="package-title">GROWVIAN STARTER PACKAGE</div><div class="package-price">₹1,149</div><ul class="skill-list"><li>Digital Marketing Basics</li><li>Affiliate Marketing Basics</li></ul><button class="btn primary package-select-btn" data-select-package="1149" type="button">SELECT PACKAGE</button></div></article>
+<article class="package-card"><div class="package-photo-wrap"><img class="package-photo" src="starter.jpg.png" alt="Growvian Starter Package" loading="lazy"></div><div class="package-info"><div class="package-number">PACKAGE 01 / 06</div><div class="package-title">GROVVIAN STARTER PACKAGE</div><div class="package-price">₹1,149</div><ul class="skill-list"><li>Digital Marketing Basics</li><li>Affiliate Marketing Basics</li></ul><button class="btn primary package-select-btn" data-select-package="1149" type="button">SELECT PACKAGE</button></div></article>
 <article class="package-card"><div class="package-photo-wrap"><img class="package-photo" src="prarambh.jpg.png" alt="Prarambh Package" loading="lazy"></div><div class="package-info"><div class="package-number">PACKAGE 02 / 06</div><div class="package-title">PRARAMBH PACKAGE</div><div class="package-price">₹2,999</div><ul class="skill-list"><li>Digital Marketing</li><li>Affiliate Marketing</li><li>Canva Full Course</li><li>ChatGPT Fundamentals</li></ul><button class="btn primary package-select-btn" data-select-package="2999" type="button">SELECT PACKAGE</button></div></article>
 <article class="package-card"><div class="package-photo-wrap"><img class="package-photo" src="aarambh.jpg.png" alt="Aarambh Package" loading="lazy"></div><div class="package-info"><div class="package-number">PACKAGE 03 / 06</div><div class="package-title">AARAMBH PACKAGE</div><div class="package-price">₹4,999</div><ul class="skill-list"><li>Digital Marketing</li><li>Affiliate Marketing</li><li>Canva Full Course</li><li>ChatGPT Full Course</li><li>Instagram Management</li><li>Content Creation</li></ul><button class="btn primary package-select-btn" data-select-package="4999" type="button">SELECT PACKAGE</button></div></article>
-<article class="package-card"><div class="package-photo-wrap"><img class="package-photo" src="pro.jpg.png" alt="Growvian Pro Package" loading="lazy"></div><div class="package-info"><div class="package-number">PACKAGE 04 / 06</div><div class="package-title">PRO PACKAGE</div><div class="package-price">₹7,999</div><ul class="skill-list"><li>Digital Marketing</li><li>Affiliate Marketing</li><li>Canva Full Course</li><li>ChatGPT Full Course</li><li>Instagram Management</li><li>Ad Management</li><li>Gemini Full Course</li><li>Professional Video Editing with VN</li></ul><button class="btn primary package-select-btn" data-select-package="7999" type="button">SELECT PACKAGE</button></div></article>
-<article class="package-card"><div class="package-photo-wrap"><img class="package-photo" src="prime.jpg.png" alt="Growvian Prime Package" loading="lazy"></div><div class="package-info"><div class="package-number">PACKAGE 05 / 06</div><div class="package-title">GROWVIAN PRIME PACKAGE</div><div class="package-price">₹13,999</div><ul class="skill-list"><li>Digital Marketing</li><li>Affiliate Marketing</li><li>Canva Full Course</li><li>ChatGPT Full Course</li><li>Gemini Full Course</li><li>Instagram Management</li><li>Ad Management</li><li>Professional Video Editing with VN</li><li>Social Media Management</li><li>Personal Branding</li><li>Lead Generation</li><li>Content Strategy</li></ul><button class="btn primary package-select-btn" data-select-package="13999" type="button">SELECT PACKAGE</button></div></article>
-<article class="package-card"><div class="package-photo-wrap"><img class="package-photo" src="diamond.jpg.png" alt="Growvian Diamond Package" loading="lazy"></div><div class="package-info"><div class="package-number">PACKAGE 06 / 06</div><div class="package-title">GROWVIAN DIAMOND PACKAGE</div><div class="package-price">₹14,999</div><ul class="skill-list"><li>Digital Marketing</li><li>Advanced Affiliate Marketing</li><li>Canva Full Course</li><li>ChatGPT Full Course</li><li>Gemini Full Course</li><li>Instagram Management</li><li>Ad Management</li><li>Professional Video Editing with VN</li><li>Social Media Management</li><li>Personal Branding</li><li>Lead Generation</li><li>Content Strategy</li><li>AI Tools &amp; Automation</li><li>Brand Growth Strategies</li><li>Online Business Development</li></ul><button class="btn primary package-select-btn" data-select-package="14999" type="button">SELECT PACKAGE</button></div></article>
+<article class="package-card"><div class="package-photo-wrap"><img class="package-photo" src="pro.jpg.png" alt="Growvian Pro Package" loading="lazy"></div><div class="package-info"><div class="package-number">PACKAGE 04 / 06</div><div class="package-title">GROVVIAN PRO PACKAGE</div><div class="package-price">₹7,999</div><ul class="skill-list"><li>Digital Marketing</li><li>Affiliate Marketing</li><li>Canva Full Course</li><li>ChatGPT Full Course</li><li>Instagram Management</li><li>Ad Management</li><li>Gemini Full Course</li><li>Professional Video Editing with VN</li></ul><button class="btn primary package-select-btn" data-select-package="7999" type="button">SELECT PACKAGE</button></div></article>
+<article class="package-card"><div class="package-photo-wrap"><img class="package-photo" src="prime.jpg.png" alt="Growvian Prime Package" loading="lazy"></div><div class="package-info"><div class="package-number">PACKAGE 05 / 06</div><div class="package-title">GROVVIAN PRIME PACKAGE</div><div class="package-price">₹13,999</div><ul class="skill-list"><li>Digital Marketing</li><li>Affiliate Marketing</li><li>Canva Full Course</li><li>ChatGPT Full Course</li><li>Gemini Full Course</li><li>Instagram Management</li><li>Ad Management</li><li>Professional Video Editing with VN</li><li>Social Media Management</li><li>Personal Branding</li><li>Lead Generation</li><li>Content Strategy</li></ul><button class="btn primary package-select-btn" data-select-package="13999" type="button">SELECT PACKAGE</button></div></article>
+<article class="package-card"><div class="package-photo-wrap"><img class="package-photo" src="diamond.jpg.png" alt="Growvian Diamond Package" loading="lazy"></div><div class="package-info"><div class="package-number">PACKAGE 06 / 06</div><div class="package-title">GROVVIAN DIAMOND PACKAGE</div><div class="package-price">₹14,999</div><ul class="skill-list"><li>Digital Marketing</li><li>Advanced Affiliate Marketing</li><li>Canva Full Course</li><li>ChatGPT Full Course</li><li>Gemini Full Course</li><li>Instagram Management</li><li>Ad Management</li><li>Professional Video Editing with VN</li><li>Social Media Management</li><li>Personal Branding</li><li>Lead Generation</li><li>Content Strategy</li><li>AI Tools &amp; Automation</li><li>Brand Growth Strategies</li><li>Online Business Development</li></ul><button class="btn primary package-select-btn" data-select-package="14999" type="button">SELECT PACKAGE</button></div></article>
 </div><div class="slider-footer"><span id="packageCounter">Package 1 of 6</span><div class="slider-dots" id="packageDots"></div><span>SWIPE ←</span></div><p class="small">Package descriptions must accurately reflect the resources actually provided. Results and earnings are not guaranteed.</p></div></section>
 <section class="section alt" id="account"><div class="wrap"><div class="eyebrow">Growvian membership</div><h2>Create your account</h2><p class="lead">Register or log in to access your member dashboard, subject to setup and verification.</p><div class="auth-layout">
 <div class="panel" id="registerBox"><h3>New Registration</h3><form id="registerForm"><label for="fullName">Full name</label><input id="fullName" autocomplete="name" required maxlength="100" placeholder="Enter your full name"><label for="regEmail">Email address</label><input id="regEmail" type="email" autocomplete="email" required placeholder="Enter your email"><label for="regPassword">Password</label><input id="regPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters"><label for="referral">Referral code (optional)</label><input id="referral" maxlength="30" placeholder="Enter referral code if you have one"><button class="btn primary" id="registerBtn" type="submit">Create Account</button></form><div id="registerStatus" class="status" aria-live="polite"></div></div>
 <div class="panel" id="loginBox"><h3>Welcome Back</h3><form id="loginForm"><label for="loginEmail">Email address</label><input id="loginEmail" type="email" autocomplete="email" required placeholder="Enter your email"><label for="loginPassword">Password</label><input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Enter your password"><button class="btn primary" id="loginBtn" type="submit">Login</button></form><button class="btn" id="resetBtn" type="button">Forgot Password?</button><div id="loginStatus" class="status" aria-live="polite"></div></div></div>
-<div class="panel hidden" id="memberPanel" style="margin-top:22px"><h3>Member Dashboard</h3><p id="welcome" class="lead"></p><p>Account status: <strong id="accountStatus">Pending</strong></p><p>Your referral code: <strong id="myReferral">Loading...</strong></p><p class="small">Your ID remains pending until payment and account verification by an administrator.</p><form id="packageForm"><label for="packageAmount">Select a package</label><select id="packageAmount" required><option value="">Choose a package</option><option value="1149">₹1,149 — GROWVIAN STARTER PACKAGE</option><option value="2999">₹2,999 — PRARAMBH PACKAGE</option><option value="4999">₹4,999 — AARAMBH PACKAGE</option><option value="7999">₹7,999 — GROWVIAN PRO PACKAGE</option><option value="13999">₹13,999 — GROWVIAN PRIME PACKAGE</option><option value="14999">₹14,999 — GROWVIAN DIAMOND PACKAGE</option></select><button class="btn primary" id="packageBtn" type="submit">Save Package Selection</button></form><div id="packageStatus" class="status" aria-live="polite"></div><p class="small">Manual payment, QR payment proof, admin verification and automatic ID activation require additional setup.</p><button class="btn" id="logoutBtn" type="button">Logout</button></div></div></section>
+<div class="panel hidden" id="memberPanel" style="margin-top:22px"><h3>Member Dashboard</h3><p id="welcome" class="lead"></p><p>Account status: <strong id="accountStatus">Pending</strong></p><p>Your referral code: <strong id="myReferral">Loading...</strong></p><p class="small">Your ID remains pending until payment and account verification by an administrator.</p><form id="packageForm"><label for="packageAmount">Select a package</label><select id="packageAmount" required><option value="">Choose a package</option><option value="1149">₹1,149 — GROVVIAN STARTER PACKAGE</option><option value="2999">₹2,999 — PRARAMBH PACKAGE</option><option value="4999">₹4,999 — AARAMBH PACKAGE</option><option value="7999">₹7,999 — GROVVIAN PRO PACKAGE</option><option value="13999">₹13,999 — GROVVIAN PRIME PACKAGE</option><option value="14999">₹14,999 — GROVVIAN DIAMOND PACKAGE</option></select><button class="btn primary" id="packageBtn" type="submit">Save Package Selection</button></form><div id="packageStatus" class="status" aria-live="polite"></div><p class="small">Manual payment, QR payment proof, admin verification and automatic ID activation require additional setup.</p><button class="btn" id="logoutBtn" type="button">Logout</button></div></div></section>
 <section class="section" id="faq"><div class="wrap"><div class="eyebrow">Need to know</div><h2>Frequently Asked Questions</h2>
 <details class="faq-item"><summary>Q1. What is Growvian?</summary><p>Growvian is an affiliate marketing platform that helps users explore affiliate programs and performance-based commission opportunities.</p></details>
 <details class="faq-item"><summary>Q2. How much commission can I earn?</summary><p>Eligible offers may provide commissions of up to 70%. Actual commissions depend on the applicable offer, qualifying sales and program terms.</p></details>
@@ -61,8 +68,51 @@ header{position:sticky;top:0;z-index:50;background:rgba(8,8,8,.96);backdrop-filt
 <section class="section alt" id="contact"><div class="wrap"><div class="eyebrow">We're here to help</div><h2>Contact Growvian</h2><div class="card contact-links"><p><strong>Email:</strong> <a href="mailto:natishkumarkilaniya009@gmail.com">natishkumarkilaniya009@gmail.com</a></p><p><strong>Email:</strong> <a href="mailto:devisharda@gmail.com">devisharda@gmail.com</a></p><p><strong>Phone:</strong> <a href="tel:+919950813539">9950813539</a></p></div></div></section>
 <section class="section" id="privacy"><div class="wrap policy-content"><div class="eyebrow">Your information</div><h2>Privacy Policy</h2><p><strong>Last updated: 29 October 2026</strong></p><h3>Information we may collect</h3><p>When you register, Growvian may collect information such as your name, email address, referral code and account-related information you submit. Do not submit information that is not requested.</p><h3>How information is used</h3><p>Information may be used to create and manage accounts, provide requested services, respond to support requests, maintain security and administer applicable program terms.</p><h3>Sharing and service providers</h3><p>Information may be processed by service providers needed to operate the website, such as authentication and database services. Information should not be sold. Any legally required disclosure will be handled in accordance with applicable law.</p><h3>Security and retention</h3><p>Reasonable safeguards should be used to protect account information. No online service can guarantee absolute security. Information should be retained only as long as needed for legitimate purposes or legal obligations.</p><h3>Your choices and contact</h3><p>You may contact Growvian to ask about access, correction or deletion of personal information, subject to applicable legal requirements.</p><p>For privacy questions: <a href="mailto:natishkumarkilaniya009@gmail.com">natishkumarkilaniya009@gmail.com</a> or <a href="mailto:devisharda@gmail.com">devisharda@gmail.com</a>.</p><p class="small">This is a starter policy template and must be reviewed against the actual website practices and applicable law before publication.</p></div></section>
 <section class="section alt" id="refund"><div class="wrap policy-content"><div class="eyebrow">Purchase terms</div><h2>Refund Policy</h2><h3>Refund Availability</h3><p>Refund requests are accepted only within <strong>7 hours from the exact time of purchase</strong>. No refund requests will be accepted after the 7-hour period, subject to applicable consumer protection laws.</p><h3>Refund Deductions</h3><p>If a refund request is approved, the following deductions are proposed, where legally permitted and applicable:</p><ul><li>3% – Payment Processing Fee</li><li>10% – Administrative Fee</li><li>18% – GST, where applicable and legally chargeable</li></ul><p>The remaining eligible balance will be refunded after applicable deductions.</p><h3>Contact for Refund Requests</h3><p>Email: <a href="mailto:natishkumarkilaniya009@gmail.com">natishkumarkilaniya009@gmail.com</a></p><p>Email: <a href="mailto:devisharda@gmail.com">devisharda@gmail.com</a></p><p class="small">Refund windows and deductions must comply with applicable consumer protection and tax laws. Have this policy reviewed before accepting payments.</p></div></section>
+
+<section class="section alt" id="paymentArea">
+  <div class="wrap">
+    <div class="eyebrow">Secure manual verification</div>
+    <h2>Payment & Membership</h2>
+    <div class="auth-layout">
+      <div class="panel">
+        <h3>Pay by UPI</h3>
+        <p>UPI ID: <strong id="growvianUpi">natishkumarkilaniya009@oksbi</strong></p>
+        <button class="btn" id="copyUpiBtn" type="button">Copy UPI ID</button>
+        <p class="small">Pay only the exact amount for your selected package. Upload payment proof and enter the UTR/reference number below. Membership activates only after admin verification.</p>
+        <div id="paymentHistory" class="status" aria-live="polite"></div>
+      </div>
+      <div class="panel">
+        <h3>Submit Payment Proof</h3>
+        <form id="paymentProofForm">
+          <label for="payPackage">Package</label>
+          <select id="payPackage" required>
+            <option value="">Choose package</option>
+            <option value="1149">₹1,149 — Starter</option>
+            <option value="2999">₹2,999 — Prarambh</option>
+            <option value="4999">₹4,999 — Aarambh</option>
+            <option value="7999">₹7,999 — Pro</option>
+            <option value="13999">₹13,999 — Prime</option>
+            <option value="14999">₹14,999 — Diamond</option>
+          </select>
+          <label for="paymentUtr">UPI UTR / Transaction Reference</label>
+          <input id="paymentUtr" required minlength="6" maxlength="80" autocomplete="off" placeholder="Enter transaction reference">
+          <label for="paymentProofFile">Payment screenshot (JPG, PNG or PDF; max 5 MB)</label>
+          <input id="paymentProofFile" type="file" required accept="image/jpeg,image/png,application/pdf">
+          <button class="btn primary" id="submitPaymentBtn" type="submit">Submit for Verification</button>
+        </form>
+        <div id="paymentSubmitStatus" class="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="panel hidden" id="adminPaymentsPanel" style="margin-top:22px">
+      <h3>Admin — Payment Requests</h3>
+      <p class="small">Approve only after checking the payment in your bank/UPI app. Never approve based only on an uploaded screenshot.</p>
+      <button class="btn" id="refreshPaymentsBtn" type="button">Refresh Requests</button>
+      <div id="adminPaymentsList" class="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
 </main>
-<footer><div class="wrap"><strong>GROWVIAN</strong><div class="footer-links"><a href="#privacy">Privacy Policy</a><a href="#refund">Refund Policy</a><a href="#contact">Contact</a><a href="#about">About</a><a href="#packages">Plans</a></div><div>© <span id="year"></span> Growvian. All rights reserved.</div><p class="small">Grow Together. Achieve More. Commission and income are not guaranteed.</p></div></footer>
+<footer><div class="wrap"><strong>GROVVIAN</strong><div class="footer-links"><a href="#privacy">Privacy Policy</a><a href="#refund">Refund Policy</a><a href="#contact">Contact</a><a href="#about">About</a><a href="#packages">Plans</a></div><div>© <span id="year"></span> Growvian. All rights reserved.</div><p class="small">Grow Together. Achieve More. Commission and income are not guaranteed.</p></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
@@ -80,17 +130,19 @@ function busy(id,on,working,normal){const b=document.getElementById(id);b.disabl
 function msg(error){return error&&error.message?error.message:'Something went wrong. Please try again.'}
 async function loadMember(){if(!db||!currentUser)return;const {data,error}=await db.from('profiles').select('full_name,referral_code,package_amount,payment_status,is_active').eq('id',currentUser.id).maybeSingle();if(error||!data){status('packageStatus','Profile is not available. Check that your Supabase profiles table and policies are configured.');return}document.getElementById('memberPanel').classList.remove('hidden');document.getElementById('welcome').textContent='Welcome, '+(data.full_name||currentUser.email||'Member');document.getElementById('myReferral').textContent=data.referral_code||'Not available';document.getElementById('accountStatus').textContent=data.is_active?'Active':'Pending admin approval';if(data.package_amount)document.getElementById('packageAmount').value=String(data.package_amount)}
 async function refreshSession(){if(!initSupabase())return;const {data,error}=await db.auth.getSession();if(error){status('loginStatus',msg(error));return}currentUser=data.session?data.session.user:null;if(currentUser)await loadMember();else document.getElementById('memberPanel').classList.add('hidden')}
-document.getElementById('registerForm').addEventListener('submit',async e=>{e.preventDefault();if(!initSupabase())return;busy('registerBtn',true,'Creating account...','Create Account');status('registerStatus','');try{const fullName=document.getElementById('fullName').value.trim(),email=document.getElementById('regEmail').value.trim(),password=document.getElementById('regPassword').value,referral=document.getElementById('referral').value.trim();const {data,error}=await db.auth.signUp({
-  email,
-  password,
-  options:{
-    data:{full_name:fullName,referred_by:referral||''},
-    emailRedirectTo: window.location.origin + window.location.pathname
-  }
-});if(error)throw error;if(data.session){currentUser=data.user;status('registerStatus','Account created. Membership is pending verification.');await loadMember()}else status('registerStatus','Registration submitted. Check your email to confirm your account, then log in.')}catch(err){status('registerStatus',msg(err))}finally{busy('registerBtn',false,'Creating account...','Create Account')}});
+document.getElementById('registerForm').addEventListener('submit',async e=>{e.preventDefault();if(!initSupabase())return;busy('registerBtn',true,'Creating account...','Create Account');status('registerStatus','');try{const fullName=document.getElementById('fullName').value.trim(),email=document.getElementById('regEmail').value.trim(),password=document.getElementById('regPassword').value,referral=document.getElementById('referral').value.trim();const {data,error}=await db.auth.signUp({email,password,options:{data:{full_name:fullName,referred_by:referral||''}}});if(error)throw error;if(data.session){currentUser=data.user;status('registerStatus','Account created. Membership is pending verification.');await loadMember()}else status('registerStatus','Registration submitted. Check your email to confirm your account, then log in.')}catch(err){status('registerStatus',msg(err))}finally{busy('registerBtn',false,'Creating account...','Create Account')}});
 document.getElementById('loginForm').addEventListener('submit',async e=>{e.preventDefault();if(!initSupabase())return;busy('loginBtn',true,'Logging in...','Login');status('loginStatus','');try{const email=document.getElementById('loginEmail').value.trim(),password=document.getElementById('loginPassword').value;const {data,error}=await db.auth.signInWithPassword({email,password});if(error)throw error;currentUser=data.user;status('loginStatus','Login successful.');await loadMember()}catch(err){status('loginStatus',msg(err))}finally{busy('loginBtn',false,'Logging in...','Login')}});
 document.getElementById('resetBtn').addEventListener('click',async()=>{if(!initSupabase())return;const email=document.getElementById('loginEmail').value.trim();if(!email){status('loginStatus','Enter your email address first.');return}const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin});status('loginStatus',error?msg(error):'If the email is registered, password reset instructions will be sent.')});
-document.getElementById('packageForm').addEventListener('submit',async e=>{e.preventDefault();if(!initSupabase())return;if(!currentUser){status('packageStatus','Please log in first.');return}const amount=Number(document.getElementById('packageAmount').value);if(![1149,2999,4999,7999,13999,14999].includes(amount)){status('packageStatus','Please select a valid package.');return}busy('packageBtn',true,'Saving...','Save Package Selection');try{const {error}=await db.from('profiles').update({package_amount:amount}).eq('id',currentUser.id);if(error)throw error;status('packageStatus','Package selection saved. Payment and ID activation are still pending.')}catch(err){status('packageStatus',msg(err))}finally{busy('packageBtn',false,'Saving...','Save Package Selection')}});
+document.getElementById('packageForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!initSupabase())return;
+  if(!currentUser){status('packageStatus','Please log in first.');return;}
+  const amount=Number(document.getElementById('packageAmount').value);
+  if(!growvianPackages[amount]){status('packageStatus','Please select a valid package.');return;}
+  status('packageStatus','Package selected. Continue to Payment & Membership below.');
+  document.getElementById('payPackage').value=String(amount);
+  document.getElementById('paymentArea').scrollIntoView({behavior:'smooth'});
+});
 document.getElementById('logoutBtn').addEventListener('click',async()=>{if(!initSupabase())return;const {error}=await db.auth.signOut();if(error){status('packageStatus',msg(error));return}currentUser=null;document.getElementById('memberPanel').classList.add('hidden');status('loginStatus','You have logged out.')});
 const slider=document.getElementById('packageSlider'),cards=Array.from(slider.querySelectorAll('.package-card')),dots=document.getElementById('packageDots'),counter=document.getElementById('packageCounter');let active=0;
 cards.forEach((card,i)=>{const d=document.createElement('button');d.type='button';d.className='slider-dot'+(i===0?' active':'');d.setAttribute('aria-label','Show package '+(i+1));d.addEventListener('click',()=>go(i));dots.appendChild(d)});
@@ -98,7 +150,181 @@ function go(i){active=Math.max(0,Math.min(cards.length-1,i));slider.scrollTo({le
 function update(){let closest=0,dist=Infinity;const center=slider.scrollLeft+slider.clientWidth/2;cards.forEach((c,i)=>{const d=Math.abs(c.offsetLeft-slider.offsetLeft+c.offsetWidth/2-center);if(d<dist){dist=d;closest=i}});active=closest;counter.textContent='Package '+(active+1)+' of '+cards.length;Array.from(dots.children).forEach((d,i)=>d.classList.toggle('active',i===active))}
 document.getElementById('packagePrev').addEventListener('click',()=>go(active-1));document.getElementById('packageNext').addEventListener('click',()=>go(active+1));slider.addEventListener('scroll',()=>requestAnimationFrame(update));
 document.querySelectorAll('[data-select-package]').forEach(b=>b.addEventListener('click',()=>{document.getElementById('packageAmount').value=b.dataset.selectPackage;document.getElementById('account').scrollIntoView({behavior:'smooth'});setTimeout(()=>{if(!document.getElementById('memberPanel').classList.contains('hidden')){document.getElementById('packageAmount').focus({preventScroll:true});status('packageStatus','Package selected. Click “Save Package Selection” to save it.')}else{status('loginStatus','Log in to save your selected package.');document.getElementById('loginBox').scrollIntoView({behavior:'smooth',block:'center'})}},500)}));
+const GROWVIAN_ADMIN_ID = '0350ca0c-f6d9-4262-89af-397131d2f716';
+const GROWVIAN_BUCKET = 'payment-proofs';
+const GROWVIAN_UPI = 'natishkumarkilaniya009@oksbi';
+const growvianPackages = {
+  1149:'GROWVIAN STARTER PACKAGE',
+  2999:'PRARAMBH PACKAGE',
+  4999:'AARAMBH PACKAGE',
+  7999:'GROWVIAN PRO PACKAGE',
+  13999:'GROWVIAN PRIME PACKAGE',
+  14999:'GROWVIAN DIAMOND PACKAGE'
+};
+
+document.getElementById('copyUpiBtn')?.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(GROWVIAN_UPI);
+    status('paymentSubmitStatus','UPI ID copied.');
+  } catch {
+    status('paymentSubmitStatus','UPI ID: '+GROWVIAN_UPI);
+  }
+});
+
+function safeText(value) {
+  return String(value ?? '').replace(/[&<>"']/g, ch => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[ch]));
+}
+
+async function loadPaymentHistory() {
+  if (!db || !currentUser) return;
+  const {data,error} = await db.from('payment_requests')
+    .select('id,created_at,package_name,package_amount,payment_utr,status,admin_note')
+    .eq('user_id',currentUser.id).order('created_at',{ascending:false}).limit(20);
+  if (error) {
+    status('paymentHistory','Payment history is not configured yet. Check payment_requests table and RLS.');
+    return;
+  }
+  const el=document.getElementById('paymentHistory');
+  if (!data?.length) { el.textContent='No payment requests submitted yet.'; return; }
+  el.innerHTML='<h4>Your payment requests</h4>'+data.map(p=>
+    `<div class="payment-row"><strong>${safeText(p.package_name)}</strong> — ₹${Number(p.package_amount).toLocaleString('en-IN')}<br>
+    Status: <strong>${safeText(p.status)}</strong> · UTR: ${safeText(p.payment_utr)}<br>
+    <span class="small">${safeText(p.created_at ? new Date(p.created_at).toLocaleString() : '')}</span>
+    ${p.admin_note?'<p>'+safeText(p.admin_note)+'</p>':''}</div>`
+  ).join('');
+}
+
+async function loadAdminPaymentRequests() {
+  if (!db || !currentUser || currentUser.id !== GROWVIAN_ADMIN_ID) return;
+  const panel=document.getElementById('adminPaymentsPanel');
+  panel.classList.remove('hidden');
+  const el=document.getElementById('adminPaymentsList');
+  el.textContent='Loading payment requests…';
+  const {data,error}=await db.from('payment_requests')
+    .select('id,user_id,created_at,package_name,package_amount,payment_utr,payment_proof_url,status,admin_note')
+    .order('created_at',{ascending:false}).limit(100);
+  if (error) { el.textContent='Could not load requests. Verify admin RLS policies: '+error.message; return; }
+  if (!data?.length) { el.textContent='No payment requests found.'; return; }
+  el.innerHTML=data.map(p=>`
+    <div class="payment-row" data-payment-id="${safeText(p.id)}">
+      <strong>${safeText(p.package_name)}</strong> — ₹${Number(p.package_amount).toLocaleString('en-IN')}<br>
+      Member ID: ${safeText(p.user_id)}<br>
+      UTR: ${safeText(p.payment_utr)} · Status: <strong>${safeText(p.status)}</strong><br>
+      ${p.payment_proof_url ? `<button class="btn view-proof" type="button" data-proof="${safeText(p.payment_proof_url)}">View proof</button>` : '<span class="small">No proof URL saved</span>'}
+      ${p.status==='pending' ? `<div class="payment-actions">
+        <button class="btn primary approve-payment" type="button" data-id="${safeText(p.id)}" data-user="${safeText(p.user_id)}" data-amount="${Number(p.package_amount)}">Approve & Activate</button>
+        <button class="btn reject-payment" type="button" data-id="${safeText(p.id)}">Reject</button>
+      </div><input class="reject-note" maxlength="300" placeholder="Optional reason for rejection">` : ''}
+      ${p.admin_note?'<p class="small">Admin note: '+safeText(p.admin_note)+'</p>':''}
+    </div>`).join('');
+}
+
+document.getElementById('paymentProofForm')?.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!initSupabase()) return;
+  if (!currentUser) { status('paymentSubmitStatus','Please log in first.'); document.getElementById('account').scrollIntoView({behavior:'smooth'}); return; }
+  const amount=Number(document.getElementById('payPackage').value);
+  const file=document.getElementById('paymentProofFile').files[0];
+  const utr=document.getElementById('paymentUtr').value.trim();
+  if (!growvianPackages[amount]) { status('paymentSubmitStatus','Choose a valid package.'); return; }
+  if (!file || file.size>5*1024*1024 || !['image/jpeg','image/png','application/pdf'].includes(file.type)) {
+    status('paymentSubmitStatus','Choose a JPG, PNG or PDF file smaller than 5 MB.'); return;
+  }
+  const btn=document.getElementById('submitPaymentBtn'); btn.disabled=true; btn.textContent='Submitting…';
+  try {
+    const ext=file.type==='application/pdf'?'pdf':file.type==='image/png'?'png':'jpg';
+    const path=`${currentUser.id}/${crypto.randomUUID()}.${ext}`;
+    const upload=await db.storage.from(GROWVIAN_BUCKET).upload(path,file,{upsert:false,contentType:file.type});
+    if (upload.error) throw upload.error;
+    // Store the object path, not a public URL. Bucket should remain PRIVATE.
+    const {error}=await db.from('payment_requests').insert({
+      user_id:currentUser.id,
+      package_name:growvianPackages[amount],
+      package_amount:amount,
+      payment_utr:utr,
+      payment_proof_url:path,
+      status:'pending'
+    });
+    if (error) {
+      await db.storage.from(GROWVIAN_BUCKET).remove([path]);
+      throw error;
+    }
+    // Save selected amount only; do not activate the account here.
+    const profileUpdate=await db.from('profiles').update({package_amount:amount}).eq('id',currentUser.id);
+    if (profileUpdate.error) console.warn('Package amount profile update failed:',profileUpdate.error.message);
+    status('paymentSubmitStatus','Payment proof submitted. Membership stays pending until the payment is verified.');
+    document.getElementById('paymentProofForm').reset();
+    await loadPaymentHistory();
+  } catch(err) { status('paymentSubmitStatus',msg(err)); }
+  finally { btn.disabled=false; btn.textContent='Submit for Verification'; }
+});
+
+document.getElementById('adminPaymentsList')?.addEventListener('click', async e => {
+  if (!currentUser || currentUser.id!==GROWVIAN_ADMIN_ID) { status('adminPaymentsList','Admin access required.'); return; }
+  const proofBtn=e.target.closest('.view-proof');
+  if (proofBtn) {
+    const path=proofBtn.dataset.proof;
+    const {data,error}=await db.storage.from(GROWVIAN_BUCKET).createSignedUrl(path,60);
+    if(error){status('adminPaymentsList','Cannot open proof: '+error.message);return;}
+    window.open(data.signedUrl,'_blank','noopener,noreferrer');
+    return;
+  }
+  const approve=e.target.closest('.approve-payment');
+  const reject=e.target.closest('.reject-payment');
+  if (!approve && !reject) return;
+  const id=(approve||reject).dataset.id;
+  const row=(approve||reject).closest('.payment-row');
+  const note=row.querySelector('.reject-note')?.value.trim() || '';
+  const button=approve||reject; button.disabled=true;
+  try {
+    if (approve) {
+      // Confirm the amount and status server-side; only this fixed admin may call this.
+      const {data:request,error:readError}=await db.from('payment_requests')
+        .select('id,user_id,package_amount,status').eq('id',id).single();
+      if(readError) throw readError;
+      if(request.status!=='pending') throw new Error('This request is no longer pending.');
+      const {error:approveError}=await db.rpc('approve_member',{target_user_id:request.user_id});
+      if(approveError) throw approveError;
+      const {error:updateError}=await db.from('payment_requests').update({
+        status:'approved',admin_note:note||'Payment verified',reviewed_at:new Date().toISOString(),reviewed_by:currentUser.id
+      }).eq('id',id);
+      if(updateError) throw updateError;
+      // Ensure selected package is saved on the member profile.
+      const {error:profileError}=await db.from('profiles').update({package_amount:request.package_amount})
+        .eq('id',request.user_id);
+      if(profileError) console.warn('Package profile update:',profileError.message);
+    } else {
+      const {error}=await db.from('payment_requests').update({
+        status:'rejected',admin_note:note||'Payment not verified',reviewed_at:new Date().toISOString(),reviewed_by:currentUser.id
+      }).eq('id',id).eq('status','pending');
+      if(error) throw error;
+    }
+    status('adminPaymentsList',approve?'Payment approved and activation requested.':'Payment request rejected.');
+    await loadAdminPaymentRequests();
+  } catch(err) { status('adminPaymentsList',msg(err)); button.disabled=false; }
+});
+
+document.getElementById('refreshPaymentsBtn')?.addEventListener('click',loadAdminPaymentRequests);
+
+});
+
+async function refreshGrowvianPaymentPanels() {
+  if(!db || !currentUser)return;
+  await loadPaymentHistory();
+  if(currentUser.id===GROWVIAN_ADMIN_ID) await loadAdminPaymentRequests();
+}
+
+// Call this inside loadMember() after its profile/dashboard is successfully loaded:
+// await refreshGrowvianPaymentPanels();
+//
+// Also call it after a successful login / session restore, after loadMember():
+// await refreshGrowvianPaymentPanels();
+
 update();refreshSession();
 </script>
+
+<!-- Supabase setup required: private payment-proofs bucket, strict payment_requests RLS policies, and a server-side approve_member(uuid) function that verifies the admin UUID. Never put a service-role key in this file. -->
 </body>
 </html>
