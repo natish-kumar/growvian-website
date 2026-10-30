@@ -97,7 +97,7 @@ function showDashboard(){ $('gwLoginPanel').classList.add('hidden');$('gwDash').
 async function loadMember(session){
  if(!session?.user){showLogin();return}
  showDashboard();$('gwEmailLabel').textContent=session.user.email||'';$('gwStatus').textContent='Checking approval…';$('gwPackage').textContent='—';$('gwReferral').textContent='—';$('gwSince').textContent=new Date(session.user.created_at).toLocaleDateString();setStatus('gwDashStatus','');
- const {data:reqs,error}=await supabaseClient.from('growvian_registration_requests').select('package_name,referral_code,status,created_at,user_id').eq('user_id',session.user.id).order('created_at',{ascending:false}).limit(1);
+ const {data:reqs,error}=await supabaseClient.from('growvian_registration_requests').select('package_name,referral_code,status,created_at,user_id,email').eq('email',session.user.email).order('created_at',{ascending:false}).limit(1);
  if(error){$('gwStatus').textContent='Cannot verify';setStatus('gwDashStatus','Could not read membership status. Secure row-level security policies must allow the signed-in user to read only their own request.');return}
  const r=reqs?.[0];if(!r||String(r.status).toLowerCase()!=='approved'){$('gwStatus').textContent='Pending approval';setStatus('gwDashStatus','Your request is not approved yet. Contact GROWVIAN support.');return}
  const {data:access,error:accessError}=await supabaseClient.from('growvian_member_access').select('is_active').eq('user_id',session.user.id).maybeSingle();
