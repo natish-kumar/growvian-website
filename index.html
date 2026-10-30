@@ -94,5 +94,51 @@ function go(i){active=Math.max(0,Math.min(cards.length-1,i));slider.scrollTo({le
 function update(){let closest=0,dist=Infinity;const center=slider.scrollLeft+slider.clientWidth/2;cards.forEach((c,i)=>{const d=Math.abs(c.offsetLeft-slider.offsetLeft+c.offsetWidth/2-center);if(d<dist){dist=d;closest=i}});active=closest;counter.textContent='Package '+(active+1)+' of '+cards.length;Array.from(dots.children).forEach((d,i)=>d.classList.toggle('active',i===active))}
 el('packagePrev').addEventListener('click',()=>go(active-1));el('packageNext').addEventListener('click',()=>go(active+1));slider.addEventListener('scroll',()=>requestAnimationFrame(update));
 </script>
+<!-- GROWVIAN LOGIN + DASHBOARD ADD-ON: paste before </body> in index.html -->
+<style>
+#gwAuth .panel{max-width:760px;margin:auto}#gwAuth .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#gwAuth .tile{border:1px solid var(--line);border-radius:12px;padding:16px;background:#0b0b0a}#gwAuth .tile strong{display:block;color:var(--gold2)}@media(max-width:600px){#gwAuth .tiles{grid-template-columns:1fr}}
+</style>
+<section class="section alt" id="gwAuth"><div class="wrap">
+<div class="eyebrow">Member access</div><h2>GROWVIAN Login</h2>
+<p class="lead">Login with your registered email. Dashboard access requires admin approval and active membership.</p>
+<div class="panel" id="gwLoginPanel"><form id="gwLoginForm">
+<label for="gwEmail">Email address</label><input id="gwEmail" type="email" autocomplete="email" required>
+<label for="gwPassword">Password</label><input id="gwPassword" type="password" autocomplete="current-password" required>
+<button class="btn primary" id="gwLoginBtn">Login ↗</button></form>
+<button class="btn" id="gwForgot" type="button" style="margin-top:10px">Forgot Password?</button>
+<div class="status" id="gwLoginStatus" aria-live="polite"></div></div>
+<div class="panel hidden" id="gwDash"><div class="eyebrow">Member area</div><h2>Welcome to GROWVIAN</h2>
+<p id="gwEmailLabel" class="lead"></p><div class="tiles">
+<div class="tile"><strong>Membership status</strong><span id="gwStatus">Checking…</span></div>
+<div class="tile"><strong>Package</strong><span id="gwPackage">—</span></div>
+<div class="tile"><strong>Referral code</strong><span id="gwReferral">—</span></div>
+<div class="tile"><strong>Member since</strong><span id="gwSince">—</span></div></div>
+<div class="status" id="gwDashStatus" aria-live="polite"></div><button class="btn" id="gwLogout" type="button">Logout</button></div>
+</div></section>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(() => {
+const db=window.supabase.createClient('https://wecybxfjrktgjdybttvj.supabase.co','sb_publishable_E3MOqNjt5c4chCP6QQwVXw_f8LXhJpC');
+const $=id=>document.getElementById(id), msg=(id,t)=>$(id).textContent=t;
+const login=$('gwLoginPanel'),dash=$('gwDash'),date=v=>v?new Date(v).toLocaleDateString():'—';
+function showLogin(){login.classList.remove('hidden');dash.classList.add('hidden')}
+async function loadMember(session){
+login.classList.add('hidden');dash.classList.remove('hidden');msg('gwEmailLabel',session.user.email||'');msg('gwStatus','Checking approval…');msg('gwPackage','—');msg('gwReferral','—');msg('gwSince',date(session.user.created_at));msg('gwDashStatus','');
+const {data:reqs,error}=await db.from('growvian_registration_requests').select('package_name,referral_code,status,created_at,user_id').eq('user_id',session.user.id).order('created_at',{ascending:false}).limit(1);
+if(error){msg('gwStatus','Cannot verify');msg('gwDashStatus','Supabase RLS/table permissions need configuration. Do not make these tables publicly readable.');return}
+const r=reqs&&reqs[0];if(!r||String(r.status).toLowerCase()!=='approved'){msg('gwStatus','Pending approval');msg('gwDashStatus','Your registration is not approved yet. Contact GROWVIAN support.');return}
+const {data:a,error:ae}=await db.from('growvian_member_access').select('is_active').eq('user_id',session.user.id).maybeSingle();
+if(ae||!a||a.is_active!==true){msg('gwStatus','Awaiting activation');msg('gwDashStatus','Approved, but member access is not active yet. Contact the administrator.');return}
+msg('gwStatus','Active');msg('gwPackage',r.package_name||'—');msg('gwReferral',r.referral_code||'Not assigned');msg('gwSince',date(r.created_at));msg('gwDashStatus','Your member access is active.')
+}
+document.querySelectorAll('.navlinks,#menu').forEach(n=>{if(!n.querySelector('[data-gw-login]')){const a=document.createElement('a');a.href='#gwAuth';a.textContent='Login';a.dataset.gwLogin='1';n.appendChild(a)}});
+$('gwLoginForm').addEventListener('submit',async e=>{e.preventDefault();const b=$('gwLoginBtn');b.disabled=true;msg('gwLoginStatus','Signing in…');try{const {data,error}=await db.auth.signInWithPassword({email:$('gwEmail').value.trim(),password:$('gwPassword').value});if(error)throw error;if(!data.session)throw Error('Could not create login session.');await loadMember(data.session);$('gwPassword').value=''}catch(e){msg('gwLoginStatus',e.message||'Login failed. Check your details.')}finally{b.disabled=false;b.textContent='Login ↗'}});
+$('gwForgot').addEventListener('click',async()=>{const email=$('gwEmail').value.trim();if(!email){msg('gwLoginStatus','Enter your registered email first.');$('gwEmail').focus();return}msg('gwLoginStatus','Sending reset email…');const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname+'#gwAuth'});msg('gwLoginStatus',error?error.message:'If the email is registered, a reset email has been sent. Check inbox and spam.')});
+$('gwLogout').addEventListener('click',async()=>{await db.auth.signOut();showLogin();msg('gwLoginStatus','Logged out.')});
+db.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_OUT'||!session)showLogin();else if(event==='SIGNED_IN'||event==='TOKEN_REFRESHED'||event==='INITIAL_SESSION')setTimeout(()=>loadMember(session),0)});
+db.auth.getSession().then(({data})=>{if(data.session)loadMember(data.session)});
+})();
+</script>
+  
 </body>
 </html>
